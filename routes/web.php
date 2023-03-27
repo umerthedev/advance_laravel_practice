@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BrandController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +42,11 @@ Route::get('/category/edit/{id}', [CategoryController::class, 'Edit']);
 Route::post('/category/update/{id}', [CategoryController::class, 'Update']);
 //soft delete
 Route::get('/softdelete/category/{id}', [CategoryController::class, 'SoftDelete']);
+//category/restore/
+Route::get('/category/restore/{id}', [CategoryController::class, 'Restore']);
+//category/pdelete/
+Route::get('/Pdelete/category/{id}', [CategoryController::class, 'Pdelete']);
+
+
+//Brand Controller
+Route::get('/brand/all', [BrandController::class, 'index'])->name('Brand');
