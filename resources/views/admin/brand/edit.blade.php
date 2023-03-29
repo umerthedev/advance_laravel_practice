@@ -21,24 +21,25 @@
                         <div class="card-header"> Edit Brand </div>
                         <div class="card-body">
 
-                            <form action="{{ url('brands/update/' . $brands->id) }}" method="POST">
+                            <form action="{{ url('brands/update/' . $brands->id) }}" method="POST"
+                                enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="old_image" value="{{ $brands->brand_image }}">
                                 <div class="mb-3">
                                     <label class="form-label">Brand Name</label>
-                                    <input name="brands_name" type="text" class="form-control"
-                                        id="exampleInputEmail1" value="{{ $brands->brand_name }}">
+                                    <input name="brand_name" type="text" class="form-control" id="exampleInputEmail1"
+                                        value="{{ $brands->brand_name }}">
 
-                                    @error('brands_name')
+                                    @error('brand_name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Brand Image</label>
-                                    <input name="brands_image" type="file" class="form-control"
+                                    <input name="brand_image" type="file" class="form-control"
                                         id="exampleInputEmail1" value="{{ $brands->brand_image }}">
 
-                                    @error('brands_image')
+                                    @error('brand_image')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>

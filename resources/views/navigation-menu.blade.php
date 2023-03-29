@@ -21,6 +21,9 @@
                     <x-nav-link href="{{ route('Brand') }}">
                         Brand
                     </x-nav-link>
+                    <x-nav-link href="{{ route('MImage') }}">
+                        Multi Image
+                    </x-nav-link>
                 </div>
             </div>
 
