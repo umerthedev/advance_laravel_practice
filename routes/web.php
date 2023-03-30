@@ -28,7 +28,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
 
         $users = user::all();
-        return view('dashboard', compact('users'));
+        return view('admin.index', compact('users'));
     })->name('dashboard');
 });
 
@@ -61,3 +61,5 @@ Route::get('/brand/delete/{id}', [BrandController::class, 'Delete']);
 
 //Multi Image
 Route::get('/multi/image', [BrandController::class, 'Multipic'])->name('MImage');
+//store.image
+Route::post('/multi/image', [BrandController::class, 'StoreImg'])->name('multipic.store');

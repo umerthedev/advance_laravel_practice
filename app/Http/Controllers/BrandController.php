@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Brand;
+use App\Models\Multipic;
 use Carbon\Carbon;
 use Image;
+use Auth;
 
 class BrandController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function index(){
         $brands = brand::latest()->paginate(5);
         return view('admin.brand.Bindex',compact('brands'));
@@ -122,8 +128,33 @@ class BrandController extends Controller
     //multi Image strat feom here
 
     public function MultiPic(){
-        $images = Multipic::all();
-        return view('admin.multipic.index',compact('images'));
+        
+        $images = MultiPic::latest()->paginate(5);
+        return view('admin.multipic.index', compact('images'));
+    }
+
+
+    //multipic.store
+    public function StoreImg(Request $request){
+        $image = $request->file('image');
+
+        foreach($image as $multi_img){           
+
+                $name_gen = hexdec(uniqid()).'.'.$multi_img->getClientOriginalExtension();
+                Image::make($multi_img)->resize(300,200)->save('image/multi/'.$name_gen);
+                $last_img = 'image/multi/'.$name_gen;
+
+
+
+                MultiPic::insert([        
+                    'image' => $last_img,
+                    'created_at' => Carbon::now()
+                ]);
+         } //end foreach
+
+        return Redirect()->back()->with('success','Images Inserted Successfully');
+
+
     }
 
 
