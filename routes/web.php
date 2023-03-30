@@ -63,3 +63,8 @@ Route::get('/brand/delete/{id}', [BrandController::class, 'Delete']);
 Route::get('/multi/image', [BrandController::class, 'Multipic'])->name('MImage');
 //store.image
 Route::post('/multi/image', [BrandController::class, 'StoreImg'])->name('multipic.store');
+
+
+//Admin Controller
+//Log Out 
+Route::get('/user/logout', [BrandController::class, 'Logout'])->name('user.logout');
