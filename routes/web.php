@@ -17,7 +17,7 @@ use App\Http\Controllers\BrandController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user_profile.index');
 });
 
 Route::middleware([
