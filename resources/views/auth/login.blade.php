@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title></title>
+        <title>Log In Page</title>
 
         <!-- GOOGLE FONTS -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500"
@@ -94,7 +94,7 @@
                                     <button type="submit" class="btn btn-lg btn-primary btn-block mb-4">Sign
                                         In</button>
                                     <p>Don't have an account yet ?
-                                        <a class="text-blue" href="{{ route('login') }}">Sign Up</a>
+                                        <a class="text-blue" href="{{ route('register') }}">Sign Up</a>
                                     </p>
                                 </div>
                             </div>

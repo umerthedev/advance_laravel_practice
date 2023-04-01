@@ -1,4 +1,4 @@
-@extends('user.home_master')
+@extends('user_profile.home_master')
 
 @section('home')
     <!-- ======= About Us Section ======= -->
