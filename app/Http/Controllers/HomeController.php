@@ -49,4 +49,59 @@ class HomeController extends Controller
 
         return Redirect()->route('slider')->with('success','Slider Added Successfully');
     }
+
+
+    //slider/edit/
+    public function Edit($id){
+        $slider = Slider::find($id);
+        return view('admin.slider.edit', compact('slider'));
+    }
+    //slider update
+    public function Update(Request $request, $id){
+        $validated = $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'required',
+            'image' => 'mimes:jpg,jpeg,png',
+        ],
+        [
+            'title.required' => 'Please Input Slider Title',
+            'description.required' => 'Please Input Slider Description',
+        ]
+    );
+
+        $old_image = $request->old_image;
+
+        $slider_image = $request->file('image');
+        if($slider_image){
+            $name_gen = hexdec(uniqid()).'.'.$slider_image->getClientOriginalExtension();
+            Image::make($slider_image)->resize(1920, 1088)->save('image/slider/'.$name_gen);
+            $last_img = 'image/slider/'.$name_gen;
+
+            unlink($old_image);
+            Slider::find($id)->update([
+                'title' => $request->title,
+                'description' => $request->description,
+                'image' => $last_img,
+                'created_at' => Carbon::now()
+            ]);
+            return Redirect()->route('slider')->with('success','Slider Updated Successfully');
+        }else{
+            Slider::find($id)->update([
+                'title' => $request->title,
+                'description' => $request->description,
+                'created_at' => Carbon::now()
+            ]);
+            return Redirect()->route('slider')->with('success','Slider Updated Successfully');
+        }
+    }
+
+
+    //slider/delete/
+    public function Delete($id){
+        $image = Slider::find($id);
+        $old_image = $image->image;
+        unlink($old_image);
+        Slider::find($id)->delete();
+        return Redirect()->back()->with('success','Slider Deleted Successfully');
+    }
 }

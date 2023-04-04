@@ -80,3 +80,9 @@ Route::get('/slider', [HomeController::class, 'Homeslider'])->name('slider');
 Route::get('/add/slider', [HomeController::class, 'Addslider'])->name('add.slider');
 //store.slide
 Route::post('/store/slider', [HomeController::class, 'StoreSlider'])->name('store.slider');
+//slider/edit/
+Route::get('/slider/edit/{id}', [HomeController::class, 'Edit']);
+//slider/update/
+Route::post('/update/slider{id}', [HomeController::class, 'Update']);
+//slider/delete/
+Route::get('/slider/delete/{id}', [HomeController::class, 'Delete']);
