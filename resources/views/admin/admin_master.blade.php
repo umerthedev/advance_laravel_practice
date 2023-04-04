@@ -86,7 +86,7 @@
                             <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
                                 data-target="#dashboard" aria-expanded="false" aria-controls="dashboard">
                                 <i class="mdi mdi-view-dashboard-outline"></i>
-                                <span class="nav-text">Dashboard</span> <b class="caret"></b>
+                                <span class="nav-text">Home</span> <b class="caret"></b>
                             </a>
                             <ul class="collapse show" id="dashboard" data-parent="#sidebar-menu">
                                 <div class="sub-menu">
@@ -94,12 +94,29 @@
 
 
                                     <li class="active">
-                                        <a class="sidenav-item-link" href="index.html">
-                                            <span class="nav-text">Ecommerce</span>
+                                        <a class="sidenav-item-link" href="{{ route('slider') }}">
+                                            <span class="nav-text">Slider</span>
 
                                         </a>
                                     </li>
+                                    <li class="active">
+                                        <a class="sidenav-item-link" href="index.html">
+                                            <span class="nav-text">Home About</span>
 
+                                        </a>
+                                    </li>
+                                    <li class="active">
+                                        <a class="sidenav-item-link" href="index.html">
+                                            <span class="nav-text">Home Portfolio</span>
+
+                                        </a>
+                                    </li>
+                                    <li class="active @yield('brand_active')">
+                                        <a class="sidenav-item-link " href="{{ route('Brand') }}">
+                                            <span class="nav-text ">Home Brand</span>
+
+                                        </a>
+                                    </li>
 
 
 
@@ -137,7 +154,8 @@
 
                                     <li class="has-sub">
                                         <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
-                                            data-target="#components" aria-expanded="false" aria-controls="components">
+                                            data-target="#components" aria-expanded="false"
+                                            aria-controls="components">
                                             <span class="nav-text">Components</span> <b class="caret"></b>
                                         </a>
                                         <ul class="collapse" id="components">
@@ -604,23 +622,6 @@
 
                 <hr class="separator" />
 
-                <div class="sidebar-footer">
-                    <div class="sidebar-footer-content">
-                        <h6 class="text-uppercase">
-                            Cpu Uses <span class="float-right">40%</span>
-                        </h6>
-                        <div class="progress progress-xs">
-                            <div class="progress-bar active" style="width: 40%;" role="progressbar"></div>
-                        </div>
-                        <h6 class="text-uppercase">
-                            Memory Uses <span class="float-right">65%</span>
-                        </h6>
-                        <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-warning" style="width: 65%;" role="progressbar">
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </aside>
 

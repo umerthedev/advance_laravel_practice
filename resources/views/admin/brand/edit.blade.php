@@ -1,10 +1,5 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl leading-tight">
-            Edit Brand
-        </h2>
-    </x-slot>
-
+@extends('admin.admin_master')
+@section('admin')
     <div class="py-12">
 
         <div class="container">
@@ -36,8 +31,8 @@
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Brand Image</label>
-                                    <input name="brand_image" type="file" class="form-control"
-                                        id="exampleInputEmail1" value="{{ $brands->brand_image }}">
+                                    <input name="brand_image" type="file" class="form-control" id="exampleInputEmail1"
+                                        value="{{ $brands->brand_image }}">
 
                                     @error('brand_image')
                                         <span class="text-danger">{{ $message }}</span>
@@ -58,5 +53,4 @@
         </div>
 
     </div>
-
-</x-app-layout>
+@endsection

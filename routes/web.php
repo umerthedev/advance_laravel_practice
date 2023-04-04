@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\HomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +19,8 @@ use App\Http\Controllers\BrandController;
 */
 
 Route::get('/', function () {
-    return view('user_profile.index');
+    $brand = DB::table('brands')->get();
+    return view('user_profile.index', compact('brand'));
 });
 
 Route::middleware([
@@ -68,3 +71,12 @@ Route::post('/multi/image', [BrandController::class, 'StoreImg'])->name('multipi
 //Admin Controller
 //Log Out 
 Route::get('/user/logout', [BrandController::class, 'Logout'])->name('user.logout');
+
+
+//Admin Part
+Route::get('/slider', [HomeController::class, 'Homeslider'])->name('slider');
+
+//Add slider view
+Route::get('/add/slider', [HomeController::class, 'Addslider'])->name('add.slider');
+//store.slide
+Route::post('/store/slider', [HomeController::class, 'StoreSlider'])->name('store.slider');
