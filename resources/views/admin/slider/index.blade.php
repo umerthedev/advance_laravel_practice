@@ -6,10 +6,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card text-right">
-
-                        <a href="{{ route('add.slider') }}">
-                            <button class="btn btn-info ">Add Slider</button></a>
+                    <div class="d-grid gap-2">
+                        <a href="{{ route('add.slider') }}" class="d-grid gap-2">
+                            <button class="btn btn-info" type="button">Add Slider</button></a>
                         </a>
                     </div>
                 </div>

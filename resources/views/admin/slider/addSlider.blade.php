@@ -6,14 +6,14 @@
     <div class="content-wrapper">
         <div class="content">
             <div class="row">
+                @if (session('success'))
+                    <div class="alert alert-success" role="alert">
+                        <strong>{{ session('success') }}</strong>
+                    </div>
+                @endif
                 <div class="col-lg-12">
                     <div class="card card-default">
-                        @if (session('success'))
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <strong>{{ session('success') }}</strong>
-                                <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                        @endif
+
                         <div class="card-header card-header-border-bottom">
                             <h2>Basic Form Controls</h2>
                         </div>

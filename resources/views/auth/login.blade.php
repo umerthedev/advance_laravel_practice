@@ -68,6 +68,9 @@
                     <div class="card-body p-5">
 
                         <h4 class="text-dark mb-5">Sign In</h4>
+                        @error('email')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="row">
@@ -75,10 +78,12 @@
                                     <input type="email" class="form-control input-lg" name="email"
                                         :value="old('email')" required autofocus autocomplete="username">
                                 </div>
+
                                 <div class="form-group col-md-12 ">
                                     <input type="password" class="form-control input-lg" name="password" required
                                         autocomplete="current-password">
                                 </div>
+
                                 <div class="col-md-12">
                                     <div class="d-flex my-2 justify-content-between">
                                         <div class="d-inline-block mr-3">
