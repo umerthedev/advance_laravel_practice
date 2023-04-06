@@ -86,3 +86,9 @@ Route::get('/slider/edit/{id}', [HomeController::class, 'Edit']);
 Route::post('/update/slider{id}', [HomeController::class, 'Update']);
 //slider/delete/
 Route::get('/slider/delete/{id}', [HomeController::class, 'Delete']);
+
+
+//Home.about
+Route::get('/Home/about', [HomeController::class, 'homeIndex'])->name('Home.about');
+//add.slider
+

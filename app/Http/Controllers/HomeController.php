@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Slider;
+use App\Models\HomeAbout;
+
 use Carbon\Carbon;
 use Image;
 use Auth;
@@ -59,12 +61,12 @@ class HomeController extends Controller
     //slider update
     public function Update(Request $request, $id){
         $validated = $request->validate([
-            'title' => 'required|max:255',
-            'description' => 'required',
+            'title' => 'max:255',
+            
             'image' => 'mimes:jpg,jpeg,png',
         ],
         [
-            'title.required' => 'Please Input Slider Title',
+            'title.max' => 'Please Input Slider Title',
             'description.required' => 'Please Input Slider Description',
         ]
     );
@@ -104,4 +106,21 @@ class HomeController extends Controller
         Slider::find($id)->delete();
         return Redirect()->back()->with('success','Slider Deleted Successfully');
     }
+
+
+    //Home About Start from Here
+
+    public function homeIndex (){
+        $about = DB::table('home_abouts')->first();
+        return view('admin.about.index', compact('about'));
+    }
+
+    
+
+
+
+
+
+
+
 }
