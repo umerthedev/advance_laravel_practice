@@ -5,6 +5,7 @@ use App\Models\User;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomeAboutController;
 
 
 /*
@@ -88,7 +89,11 @@ Route::post('/update/slider{id}', [HomeController::class, 'Update']);
 Route::get('/slider/delete/{id}', [HomeController::class, 'Delete']);
 
 
-//Home.about
-Route::get('/Home/about', [HomeController::class, 'homeIndex'])->name('Home.about');
-//add.slider
+//Home About
+//Home.AboutIndex
+Route::get('/home/about', [HomeAboutController::class, 'HomeAbout'])->name('Home.AboutIndex');
+//Add.About
+Route::get('/add/about', [HomeAboutController::class, 'AddAbout'])->name('add.about');
+//Store.About
+Route::post('/store/about', [HomeAboutController::class, 'StoreAbout'])->name('store.about');
 

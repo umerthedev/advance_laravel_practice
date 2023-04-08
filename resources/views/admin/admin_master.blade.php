@@ -100,7 +100,7 @@
                                         </a>
                                     </li>
                                     <li class="active">
-                                        <a class="sidenav-item-link" href="{{ route('Home.about') }}">
+                                        <a class="sidenav-item-link" href="{{ route('Home.AboutIndex') }}">
                                             <span class="nav-text">Home About</span>
 
                                         </a>

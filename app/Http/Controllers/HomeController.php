@@ -108,12 +108,10 @@ class HomeController extends Controller
     }
 
 
-    //Home About Start from Here
+  
 
-    public function homeIndex (){
-        $about = DB::table('home_abouts')->first();
-        return view('admin.about.index', compact('about'));
-    }
+
+   
 
     
 
