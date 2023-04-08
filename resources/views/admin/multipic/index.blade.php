@@ -1,10 +1,6 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl leading-tight">
-            All Category
-        </h2>
-    </x-slot>
+@extends('admin.admin_master')
 
+@section('admin')
     <div class="py-12">
 
         <div class="container">
@@ -14,8 +10,7 @@
                         @if (session('success'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <strong>{{ session('success') }}</strong>
-                                <button type="button" class="btn-close " data-bs-dismiss="alert"
-                                    aria-label="Close"></button>
+                                <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         @endif
                         <div class="card-header"> All Category
@@ -92,5 +87,4 @@
 
 
     </div>
-
-</x-app-layout>
+@endsection

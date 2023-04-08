@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
+use App\Models\Multipic;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\HomeController;
@@ -21,7 +22,9 @@ use App\Http\Controllers\HomeAboutController;
 
 Route::get('/', function () {
     $brand = DB::table('brands')->get();
-    return view('user_profile.index', compact('brand'));
+    $homeabout = DB::table('home_abouts')->first();
+    $images = Multipic::all();
+    return view('user_profile.index', compact('brand','homeabout','images'));
 });
 
 Route::middleware([
@@ -96,4 +99,11 @@ Route::get('/home/about', [HomeAboutController::class, 'HomeAbout'])->name('Home
 Route::get('/add/about', [HomeAboutController::class, 'AddAbout'])->name('add.about');
 //Store.About
 Route::post('/store/about', [HomeAboutController::class, 'StoreAbout'])->name('store.about');
+///about/edit/
+Route::get('/about/edit/{id}', [HomeAboutController::class, 'Edit']);
+//about/edit/
+Route::post('update/about/{id}', [HomeAboutController::class, 'Updateabout']);
+//about/delete/
+Route::get('/about/delete/{id}', [HomeAboutController::class, 'DeleteAbout']);
+
 

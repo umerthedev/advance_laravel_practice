@@ -54,8 +54,8 @@
 
 
                                             <td>
-                                                <a href="{{ url('about/edit/' . $ab->id) }}" class="btn btn-info">Edit</a>
-                                                <a href="{{ url('about/delete/' . $ab->id) }}"
+                                                <a href="{{ url('/about/edit/' . $ab->id) }}" class="btn btn-info">Edit</a>
+                                                <a href="{{ url('/about/delete/' . $ab->id) }}"
                                                     onclick="return confirm('Are you sure want to delete ?')"
                                                     class="btn btn-danger">Delete</a>
                                             </td>
