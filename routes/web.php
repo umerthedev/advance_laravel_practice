@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeAboutController;
+use App\Http\Controllers\ContactController;
 
 
 /*
@@ -105,5 +106,27 @@ Route::get('/about/edit/{id}', [HomeAboutController::class, 'Edit']);
 Route::post('update/about/{id}', [HomeAboutController::class, 'Updateabout']);
 //about/delete/
 Route::get('/about/delete/{id}', [HomeAboutController::class, 'DeleteAbout']);
+
+
+//Contact Page
+//home contact page route
+Route::get('/contact', [ContactController::class, 'HomeContact'])->name('user.contact');
+
+//contact.profile
+Route::get('/contact', [ContactController::class, 'Contact'])->name('contact.profile');
+//add.contact
+Route::get('/add/contact', [ContactController::class, 'AddContact'])->name('add.contact');
+//store.contact
+Route::post('/store/contact', [ContactController::class, 'StoreContact'])->name('store.contact');
+
+//EditContact
+Route::get('contact/edit/{id}', [ContactController::class, 'EditContact']);
+//update.contact
+Route::post('update/contact/{id}', [ContactController::class, 'UpdateContact']);
+
+//contact/delete/
+Route::get('/contact/delete/{id}', [ContactController::class, 'DeleteContact']);
+
+
 
 

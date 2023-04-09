@@ -117,19 +117,26 @@
 
                                         </a>
                                     </li>
-
-
-
-
-
-                                    <li>
-                                        <a class="sidenav-item-link" href="analytics.html">
-                                            <span class="nav-text">Analytics</span>
-
-                                            <span class="badge badge-success">new</span>
-
+                                    <li class="has-sub">
+                                        <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
+                                            data-target="#components" aria-expanded="false" aria-controls="components">
+                                            <span class="nav-text">Contact</span> <b class="caret"></b>
                                         </a>
-                                    </li>
+                                        <ul class="collapse" id="components">
+                                            <div class="sub-menu">
+
+                                                <li>
+                                                    <a href="{{ route('contact.profile') }}">Contact Profile</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="badge.html">Contact Message</a>
+                                                </li>
+                                            </div>
+
+                                        </ul>
+
+
 
 
 
@@ -581,11 +588,13 @@
                                                 </li>
 
                                                 <li>
-                                                    <a href="sidebar-with-footer.html">Sidebar With Footer</a>
+                                                    <a href="sidebar-with-footer.html">Sidebar With
+                                                        Footer</a>
                                                 </li>
 
                                                 <li>
-                                                    <a href="sidebar-without-footer.html">Sidebar Without Footer</a>
+                                                    <a href="sidebar-without-footer.html">Sidebar Without
+                                                        Footer</a>
                                                 </li>
 
                                                 <li>
