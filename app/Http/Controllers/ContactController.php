@@ -7,11 +7,12 @@ use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\Models\Contact;
 
+
 class ContactController extends Controller
 {
    
    //user home contact route
-    public function HomeContact(){
+    public function communicat(){
         $usercontact = DB::table('contacts')->first();
         return view('user_profile.user_contact',compact('usercontact'));
     }

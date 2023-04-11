@@ -1,4 +1,5 @@
 @extends('user_profile.home_master')
+@section('home_active', 'active')
 
 @section('home')
     @php

@@ -130,7 +130,7 @@
                                                 </li>
 
                                                 <li>
-                                                    <a href="badge.html">Contact Message</a>
+                                                    <a href="{{ route('u_contact_view') }}">Contact Message</a>
                                                 </li>
                                             </div>
 

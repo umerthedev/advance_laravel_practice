@@ -8,6 +8,8 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeAboutController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\UserConController;
+
 
 
 /*
@@ -109,8 +111,8 @@ Route::get('/about/delete/{id}', [HomeAboutController::class, 'DeleteAbout']);
 
 
 //Contact Page
-//home contact page route
-Route::get('/contact', [ContactController::class, 'HomeContact'])->name('user.contact');
+//home.con
+Route::get('/communicat', [ContactController::class, 'communicat'])->name('communicat');
 
 //contact.profile
 Route::get('/contact', [ContactController::class, 'Contact'])->name('contact.profile');
@@ -126,6 +128,13 @@ Route::post('update/contact/{id}', [ContactController::class, 'UpdateContact']);
 
 //contact/delete/
 Route::get('/contact/delete/{id}', [ContactController::class, 'DeleteContact']);
+//u_contact form save
+Route::post('/u_contact', [UserConController::class, 'u_contact'])->name('u_contact');
+//u_contact form view   
+Route::get('/u_contact', [UserConController::class, 'u_contact_view'])->name('u_contact_view');
+//msg/delete/
+Route::get('/msg/delete/{id}', [UserConController::class, 'DeleteMsg']);
+
 
 
 
