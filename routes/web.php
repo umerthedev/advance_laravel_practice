@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeAboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\UserConController;
+use App\Http\Controllers\ChangePassController;
 
 
 
@@ -134,6 +135,11 @@ Route::post('/u_contact', [UserConController::class, 'u_contact'])->name('u_cont
 Route::get('/u_contact', [UserConController::class, 'u_contact_view'])->name('u_contact_view');
 //msg/delete/
 Route::get('/msg/delete/{id}', [UserConController::class, 'DeleteMsg']);
+
+//change.password
+Route::get('/change/password', [ChangePassController::class, 'ChangePass'])->name('change.password');
+//password.update
+Route::post('/update/password', [ChangePassController::class, 'UpdatePass'])->name('password.update');
 
 
 

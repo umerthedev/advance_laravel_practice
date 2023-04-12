@@ -68,6 +68,11 @@
                     <div class="card-body p-5">
 
                         <h4 class="text-dark mb-5">Sign In</h4>
+                        @if (session('success'))
+                            <div class="alert alert-success" role="alert">
+                                <strong>{{ session('success') }}</strong>
+                            </div>
+                        @endif
                         @error('email')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror

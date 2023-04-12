@@ -1,5 +1,5 @@
 @extends('admin.admin_master')
-@section('brand_active', 'active')
+@section('Slider_active', 'active')
 @section('admin')
 
 

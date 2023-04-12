@@ -1,5 +1,5 @@
 @extends('admin.admin_master')
-@section('brand_active', 'active')
+@section('Contact_active', 'active')
 @section('admin')
 
 

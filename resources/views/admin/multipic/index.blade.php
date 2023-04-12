@@ -1,5 +1,6 @@
 @extends('admin.admin_master')
 
+@section('Portfolio_active', 'active')
 @section('admin')
     <div class="py-12">
 
