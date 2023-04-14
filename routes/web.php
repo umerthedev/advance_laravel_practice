@@ -140,6 +140,10 @@ Route::get('/msg/delete/{id}', [UserConController::class, 'DeleteMsg']);
 Route::get('/change/password', [ChangePassController::class, 'ChangePass'])->name('change.password');
 //password.update
 Route::post('/update/password', [ChangePassController::class, 'UpdatePass'])->name('password.update');
+//my.profile
+Route::get('/my/profile', [ChangePassController::class, 'MyProfile'])->name('my.profile');
+//update.profile
+Route::post('/update/profile', [ChangePassController::class, 'UpdateProfile'])->name('update.profile');
 
 
 
