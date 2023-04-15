@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500"
         rel="stylesheet" />
     <link href="https://cdn.materialdesignicons.com/3.0.39/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
+        integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- PLUGINS CSS STYLE -->
     <link href="{{ asset('') }}backend/assets/plugins/toaster/toastr.min.css" rel="stylesheet" />
@@ -820,6 +823,29 @@
     <script src="{{ asset('') }}backend/assets/js/date-range.js"></script>
     <script src="{{ asset('') }}backend/assets/js/map.js"></script>
     <script src="{{ asset('') }}backend/assets/js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        @if (Session::has('message'))
+            var type = "{{ session::get('alert-type', 'info') }}"
+            switch (type) {
+                case 'info':
+                    toastr.info("{{ Session::get('message') }}");
+                    break;
+                case 'success':
+                    toastr.success("{{ Session::get('message') }}");
+                    break;
+                case 'warning':
+                    toastr.warning("{{ Session::get('message') }}");
+                    break;
+                case 'error':
+                    toastr.error("{{ Session::get('message') }}");
+                    break;
+            }
+        @endif
+    </script>
 
 
 
